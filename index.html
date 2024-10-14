@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test project</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./sass/main.css">
+</head>
+
+<body>
+
+    <div class="modal">
+
+        <div class="modal__title">
+            <h1>Test task</h1>
+        </div>
+
+        <label for="pair" class="content__pair-lable">Type Name/Value pair</label>
+        <br>
+        <div class="content__pair">
+
+            <div class="pair">
+                <input type="text" class="textbox__pair" name="nameInput" id="nameInput" size="30" placeholder="name=value">
+            </div>
+
+            <div class="pair">
+                <button class="button-add" id="button-add" type="submit">Add</button>
+            </div>
+
+        </div>
+
+        <label for="list" class="content__pair-list-lable">Name/Value Pair List</label>
+        <br>
+
+        <div class="content__pair-list">
+
+            <div class="pair-list">
+                <select class="textbox__pair-list" id="list" multiple></select>
+            </div>
+
+            <div class="pair-list list-btn">
+
+                <div class="button">
+                    <button id="sortByName" class="button-name" onclick='sortByName()'>Sort by Name</button>
+                </div>
+                <div class="button">
+                    <button id="sortByValue" class="button-value" onclick='sortByValue()'>Sort by Value</button>
+                </div>
+                <div class="button">
+                    <button id="deleteButton" class="button-delete" onclick='deleteEntry()' data-tooltip="select the item you want to delete">Delete</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="buttonXml">
+            <button id="showAsXml" class="button-xml" data-modal-open>Show as XML</button>
+        </div>
+        
+    </div>
+
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal-content">
+            <span class="close" id="closeModal" data-modal-close>&times;</span>
+            <h2 class="output-title">XML Output</h2>
+            <code id="xmlOutput"></code>
+        </div>
+    </div>
+</div>
+
+    <script src="./js/script.js"></script>
+
+</body>
+</html>
